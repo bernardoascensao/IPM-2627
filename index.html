@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPM FCT NOVA • Grupo XX</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        fct: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#005aa9',
+                            600: '#00488a',
+                            700: '#003875',
+                            800: '#002958',
+                            900: '#001a3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 90, 169, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.04) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 90, 169, 0.25);
+            box-shadow: 0 12px 24px -6px rgba(0, 56, 117, 0.08);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <div>
+        <!-- Header Banner Institucional -->
+        <header class="relative overflow-hidden bg-gradient-to-br from-fct-900 via-fct-800 to-slate-900 text-white pt-10 pb-12 px-4 sm:px-6 lg:px-8 shadow-md">
+            <!-- Background Decorative Grid -->
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+            
+            <div class="max-w-6xl mx-auto relative z-10">
+                <!-- Top Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-fct-100 mb-5 shadow-sm">
+                    <svg class="w-4 h-4 text-fct-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V3m0 2a2 2 0 012-2h2a2 2 0 012 2v14"></path>
+                    </svg>
+                    <span>FCT NOVA • Departamento de Informática</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+                            Interação Pessoa-Máquina <span class="text-fct-200 font-normal">(IPM)</span>
+                        </h1>
+                        <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light">
+                            Faculdade de Ciências e Tecnologia — Universidade NOVA de Lisboa
+                        </p>
+                    </div>
+
+                    <!-- Meta Chips -->
+                    <div class="flex flex-wrap gap-2.5 sm:gap-3">
+                        <div class="px-3.5 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-medium text-white flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Ano Letivo 2026/2027
+                        </div>
+                        <div class="px-3.5 py-2 rounded-xl bg-fct-500/80 backdrop-blur-md border border-fct-400/30 text-xs sm:text-sm font-bold text-white shadow-sm">
+                            Grupo 11
+                        </div>
+                        <div class="px-3.5 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-medium text-slate-200">
+                            Turno Prático: P2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Layout (Posicionamento limpo e sem sobreposições) -->
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 mb-12">
+            
+            <!-- Section 1: Membros da Equipa -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200/80 pb-4">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Membros da Equipa</h2>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Estudantes responsáveis pelo desenvolvimento do projeto de IPM</p>
+                    </div>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-200/80 text-slate-700">4 Elementos</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    
+                    <!-- Membro 1 -->
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-fct-600 to-sky-400 text-white font-bold text-lg flex items-center justify-center shadow-md">
+                                    BA
+                                </div>
+                                <!-- <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-100 text-sky-800 border border-sky-200/60">
+                                    UX Researcher
+                                </span> -->
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base leading-snug">Bernardo Ascensão</h3>
+                                <p class="text-xs text-slate-500 font-medium">Nº Estudante: <span class="text-slate-700">75153</span></p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs">
+                            <a href="mailto:bas.santos@campus.fct.unl.pt" class="text-fct-600 font-medium hover:underline truncate" title="Enviar e-mail">
+                                bas.santos@campus.fct.unl.pt
+                            </a>
+                            <button onclick="copyToClipboard('bas.santos@campus.fct.unl.pt', 'Bernardo Ascensão')" class="p-1.5 text-slate-400 hover:text-fct-600 hover:bg-fct-50 rounded-lg transition-colors" title="Copiar e-mail">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Membro 2 -->
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-400 text-white font-bold text-lg flex items-center justify-center shadow-md">
+                                    RF
+                                </div>
+                                <!-- <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-100 text-indigo-800 border border-indigo-200/60">
+                                    UI Designer
+                                </span> -->
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base leading-snug">Rafa Ferreira</h3>
+                                <p class="text-xs text-slate-500 font-medium">Nº Estudante: <span class="text-slate-700">80004</span></p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs">
+                            <a href="mailto:p213269@campus.fct.unl.pt" class="text-fct-600 font-medium hover:underline truncate" title="Enviar e-mail">
+                                p213269@campus.fct.unl.pt
+                            </a>
+                            <button onclick="copyToClipboard('p213269@campus.fct.unl.pt', 'Rafa')" class="p-1.5 text-slate-400 hover:text-fct-600 hover:bg-fct-50 rounded-lg transition-colors" title="Copiar e-mail">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Membro 3 -->
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white font-bold text-lg flex items-center justify-center shadow-md">
+                                    BI
+                                </div>
+                                <!-- <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200/60">
+                                    Prototype Lead
+                                </span> -->
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base leading-snug">Bernardo Igwe</h3>
+                                <p class="text-xs text-slate-500 font-medium">Nº Estudante: <span class="text-slate-700">73819</span></p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs">
+                            <a href="mailto:b.igwe@campus.fct.unl.pt" class="text-fct-600 font-medium hover:underline truncate" title="Enviar e-mail">
+                                b.igwe@campus.fct.unl.pt
+                            </a>
+                            <button onclick="copyToClipboard('b.igwe@campus.fct.unl.pt', 'Bernardo Igwe')" class="p-1.5 text-slate-400 hover:text-fct-600 hover:bg-fct-50 rounded-lg transition-colors" title="Copiar e-mail">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Membro 4 -->
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-600 to-orange-400 text-white font-bold text-lg flex items-center justify-center shadow-md">
+                                    MP
+                                </div>
+                                <!-- <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-200/60">
+                                    Frontend Dev
+                                </span> -->
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base leading-snug">Miguel Pires</h3>
+                                <p class="text-xs text-slate-500 font-medium">Nº Estudante: <span class="text-slate-700">12348</span></p>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs">
+                            <a href="mailto:m4@campus.fct.unl.pt" class="text-fct-600 font-medium hover:underline truncate" title="Enviar e-mail">
+                                m4@campus.fct.unl.pt
+                            </a>
+                            <button onclick="copyToClipboard('m4@campus.fct.unl.pt', 'Membro 4')" class="p-1.5 text-slate-400 hover:text-fct-600 hover:bg-fct-50 rounded-lg transition-colors" title="Copiar e-mail">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section 2: Repositório de Documentos -->
+            <section class="space-y-6">
+                
+                <!-- Search & Counter Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Repositório do Projeto</h2>
+                            <span id="docCountBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-fct-100 text-fct-800 border border-fct-200">
+                                0 Documentos
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Documentos, relatórios e protótipos submetidos pelo grupo</p>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="relative min-w-[260px]">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Pesquisar documento..." 
+                            class="w-full pl-10 pr-4 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-fct-500 shadow-sm">
+                    </div>
+                </div>
+
+                <!-- Lista de Ficheiros Container -->
+                <div id="docsList" class="space-y-3">
+                    <!-- Gerado dinamicamente via JS a partir do array 'documentos' -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="hidden glass-panel rounded-2xl p-12 text-center space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-slate-600 font-semibold text-sm">Nenhum documento encontrado</p>
+                    <p class="text-xs text-slate-400">Tente ajustar o termo da sua pesquisa.</p>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer Institucional -->
+    <footer class="border-t border-slate-200/80 bg-white/60 backdrop-blur-md py-8 px-4 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-800">IPM • FCT NOVA</span>
+                <span>— Faculdade de Ciências e Tecnologia da Universidade NOVA de Lisboa</span>
+            </div>
+            <p>© 2026/2027 Grupo 11. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Pré-visualização de Documento -->
+    <div id="previewModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-md hidden opacity-0 transition-opacity duration-200 p-3 sm:p-6">
+        <div class="glass-panel bg-white rounded-2xl sm:rounded-3xl max-w-5xl w-full h-[88vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200/80">
+            
+            <!-- Modal Header -->
+            <div class="px-5 py-4 bg-slate-50/80 border-b border-slate-200 flex items-center justify-between gap-4 shrink-0">
+                <div class="min-w-0">
+                    <h3 id="modalDocTitle" class="font-bold text-slate-900 text-base sm:text-lg truncate">Título do Documento</h3>
+                    <p id="modalDocMeta" class="text-xs text-slate-500 font-medium truncate">ficheiro.pdf • 15/10/2026</p>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0">
+                    <!-- Action Button in Modal -->
+                    <a id="modalDownloadBtn" href="#" target="_blank"
+                        class="px-3.5 py-2 rounded-xl bg-fct-600 hover:bg-fct-700 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span id="modalBtnLabel" class="hidden sm:inline">Descarregar</span>
+                    </a>
+
+                    <!-- Close Modal Button -->
+                    <button id="closeModalBtn" onclick="closePreviewModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors" title="Fechar (Esc)">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Viewer Container -->
+            <div id="modalViewerContent" class="flex-1 bg-slate-100 relative overflow-hidden flex items-center justify-center">
+                <!-- Conteúdo do iFrame ou Pré-visualização inserido via JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification Engine UI Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script>
+        /*
+         ================================================================================
+         CONFIGURAÇÃO MANUAL DE DOCUMENTOS DE IPM
+         ================================================================================
+         Para Adicionar: Adicione um novo objeto {} à lista 'documentos' abaixo.
+         Para Editar: Altere 'title', 'desc', 'type', 'date' ou 'url'.
+         Para Remover: Apague a linha/objeto correspondente.
+         
+         Tipos suportados (type):
+           - 'PDF'  : Abre a pré-visualização em PDF dentro do Modal.
+           - 'LINK' : Abre um ecrã no Modal com ligação direta para Figma ou site externo.
+         ================================================================================
+        */
+        const documentos = [
+            {
+                id: 1,
+                title: 'Relatório da Etapa 1',
+                desc: 'Problem, Target users, Project Goal',
+                type: 'PDF',
+                date: '30/09/2026',
+                url: './documents/G_11_stage1.pdf',
+            },
+        ];
+
+        let searchQuery = '';
+
+        window.onload = function() {
+            setupEventListeners();
+            renderDocuments();
+        };
+
+        function setupEventListeners() {
+            // Evento do campo de pesquisa
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value.toLowerCase().trim();
+                    renderDocuments();
+                });
+            }
+
+            // Fechar modal ao pressionar a tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closePreviewModal();
+                }
+            });
+        }
+
+        function renderDocuments() {
+            const listContainer = document.getElementById('docsList');
+            const emptyState = document.getElementById('emptyState');
+
+            const filtered = documentos.filter(doc => {
+                return doc.title.toLowerCase().includes(searchQuery) || 
+                       doc.desc.toLowerCase().includes(searchQuery) ||
+                       doc.type.toLowerCase().includes(searchQuery);
+            });
+
+            // Atualizar badge com contador
+            const badge = document.getElementById('docCountBadge');
+            if (badge) {
+                badge.innerText = `${documentos.length} Documento${documentos.length !== 1 ? 's' : ''}`;
+            }
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            listContainer.innerHTML = filtered.map(doc => {
+                const isPdf = doc.type.toUpperCase() === 'PDF';
+                const iconSvg = isPdf 
+                    ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V7.5L14.5 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>`
+                    : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`;
+
+                const actionText = isPdf ? 'Descarregar' : 'Aceder';
+
+                return `
+                    <div onclick="openPreviewModal(${doc.id})" 
+                        class="glass-card rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-5 cursor-pointer group transition-all">
+                        
+                        <div class="flex items-start gap-4 min-w-0 flex-1">
+                            <!-- Icon Badge -->
+                            <div class="w-12 h-12 rounded-xl bg-fct-50 text-fct-600 group-hover:bg-fct-600 group-hover:text-white flex items-center justify-center shrink-0 shadow-sm transition-colors duration-200">
+                                ${iconSvg}
+                            </div>
+
+                            <!-- Content Details -->
+                            <div class="min-w-0 space-y-1 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <h3 class="font-bold text-slate-900 text-base leading-snug group-hover:text-fct-600 transition-colors truncate">
+                                        ${escapeHtml(doc.title)}
+                                    </h3>
+                                    <span class="px-2 py-0.5 text-[10px] font-bold rounded-md ${isPdf ? 'bg-red-100 text-red-700' : 'bg-purple-100 text-purple-700'}">
+                                        ${doc.type}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-600 line-clamp-2 font-normal leading-relaxed">
+                                    ${escapeHtml(doc.desc)}
+                                </p>
+                                <div class="flex items-center gap-2 text-xs text-slate-400 font-medium pt-1">
+                                    <span>Data de submissão: ${doc.date}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-2 shrink-0 self-end sm:self-center border-t sm:border-0 border-slate-100 pt-3 sm:pt-0 w-full sm:w-auto justify-end">
+                            <span class="px-3 py-2 rounded-xl bg-slate-100 group-hover:bg-fct-50 text-slate-600 group-hover:text-fct-700 font-semibold text-xs transition-colors flex items-center gap-1.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                <span>Ver</span>
+                            </span>
+
+                            <a href="${doc.url}" ${isPdf ? 'download' : ''} target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"
+                                class="px-4 py-2 rounded-xl bg-fct-600 hover:bg-fct-700 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-sm active:scale-95" title="${actionText}">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                <span>${actionText}</span>
+                            </a>
+                        </div>
+
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openPreviewModal(docId) {
+            const doc = documentos.find(d => d.id === docId);
+            if (!doc) return;
+
+            document.getElementById('modalDocTitle').innerText = doc.title;
+            document.getElementById('modalDocMeta').innerText = `Tipo: ${doc.type} • Data: ${doc.date}`;
+
+            const downloadBtn = document.getElementById('modalDownloadBtn');
+            const btnLabel = document.getElementById('modalBtnLabel');
+            downloadBtn.href = doc.url;
+            
+            if (doc.type.toUpperCase() === 'PDF') {
+                downloadBtn.setAttribute('download', '');
+                btnLabel.innerText = 'Descarregar PDF';
+            } else {
+                downloadBtn.removeAttribute('download');
+                btnLabel.innerText = 'Abrir Ligação';
+            }
+
+            const viewerContainer = document.getElementById('modalViewerContent');
+            viewerContainer.innerHTML = '';
+
+            if (doc.type.toUpperCase() === 'PDF') {
+                viewerContainer.innerHTML = `
+                    <iframe src="${doc.url}" class="w-full h-full border-0" title="${escapeHtml(doc.title)}"></iframe>
+                `;
+            } else {
+                // Link Externo (Figma, etc.)
+                viewerContainer.innerHTML = `
+                    <div class="text-center p-8 max-w-md mx-auto space-y-4">
+                        <div class="w-16 h-16 rounded-2xl bg-fct-50 text-fct-600 flex items-center justify-center mx-auto shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-slate-900 text-lg">Recurso Externo / Protótipo</h4>
+                            <p class="text-xs text-slate-500">Este conteúdo está alojado numa plataforma externa (ex: Figma, Google Drive).</p>
+                        </div>
+                        <a href="${doc.url}" target="_blank" rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-fct-600 hover:bg-fct-700 text-white font-semibold text-sm shadow-md transition-all">
+                            <span>Aceder ao Protótipo</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                `;
+            }
+
+            const modal = document.getElementById('previewModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePreviewModal() {
+            const modal = document.getElementById('previewModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.getElementById('modalViewerContent').innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        function copyToClipboard(text, name) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const input = document.createElement('input');
+                input.value = text;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+            }
+            showToast(`E-mail de ${name} copiado para a área de transferência!`);
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+
+            toast.className = `pointer-events-auto px-4 py-3 rounded-xl bg-slate-900 text-white shadow-xl text-xs sm:text-sm font-semibold flex items-center gap-2.5 transition-all transform translate-y-2 opacity-0 duration-200`;
+            toast.innerHTML = `
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>${message}</span>
+            `;
+
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.remove('translate-y-2', 'opacity-0'), 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 200);
+            }, 3000);
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
